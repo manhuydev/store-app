@@ -1,6 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Api\StoreController;
+use App\Http\Controllers\Api\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::resource('stores', StoreController::class);
+
+Route::resource('products', ProductController::class);
